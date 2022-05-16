@@ -5,10 +5,11 @@
 \alias{moons}
 \title{Toy Moons Dataset}
 \format{
-A data frame with 1000 rows and 2 variables (x, y)
+A data frame with 1000 rows and 3 variables; 2 quantitative (x, y), 1 qualitative
+(category)
 }
 \description{
-A toy dataset containing x and y coordinates of two multivariate moons
+A toy dataset containing x and y coordinates of two multivariate moons with an additional factor column
 }
 \author{
 Lloyd A. Courtenay

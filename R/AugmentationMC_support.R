@@ -29,17 +29,6 @@ NULL
 #' @format A data frame with 500 rows and 2 variables (x, y)
 NULL
 
-#' Toy Moons Dataset
-#'
-#' A toy dataset containing x and y coordinates of two multivariate moons
-#'
-#' @name moons
-#' @docType data
-#' @author Lloyd A. Courtenay
-#' @keywords datasets
-#' @format A data frame with 1000 rows and 2 variables (x, y)
-NULL
-
 #' Toy Single Moon Dataset
 #'
 #' A toy dataset containing x and y coordinates of a single multivariate moon
@@ -51,11 +40,11 @@ NULL
 #' @format A data frame with 500 rows and 2 variables (x, y)
 NULL
 
-#' Toy Qualitative and Quantitative Moons Dataset
+#' Toy Moons Dataset
 #'
 #' A toy dataset containing x and y coordinates of two multivariate moons with an additional factor column
 #'
-#' @name moons_qual_quant
+#' @name moons
 #' @docType data
 #' @author Lloyd A. Courtenay
 #' @keywords datasets
