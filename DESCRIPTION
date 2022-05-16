@@ -1,7 +1,7 @@
 Package: AugmentationMC
 Type: Package
 Title: Monte Carlo based tools and algorithms for Data Augmentation
-Version: 0.1.0
+Version: 1.0.0
 Authors@R: person("Lloyd", "Courtenay", email = "ladc1995@gmail.com", role = c("aut", "cre"))
 Description: This library provides a set of functions for the implementation of Monte Carlo
     based algorithms for the augmentation of both qualitative and quantitative data.
