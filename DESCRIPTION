@@ -1,0 +1,31 @@
+Package: AugmentationMC
+Type: Package
+Title: Monte Carlo based tools and algorithms for Data Augmentation
+Version: 0.1.0
+Authors@R: person("Lloyd", "Courtenay", email = "ladc1995@gmail.com", role = c("aut", "cre"))
+Description: This library provides a set of functions for the implementation of Monte Carlo
+    based algorithms for the augmentation of both qualitative and quantitative data.
+    This includes a series of Monte Carlo simulation functions, as well as an implementation
+    of a Metropolis-Hastings variant of the Markov Chain Monte Carlo algorithm, with
+    a series of functions for the evaluation of chains.
+License: file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+    abind (>= 1.4),
+    methods
+Depends:
+    R(>= 2.10)
+RoxygenNote: 7.1.2
+Collate: 
+    'AugmentationMC_support.R'
+    'MCMC_Trace.R'
+    'MCMC.R'
+    'Markov_Chain_MiscFunctions.R'
+    'TOST_MiscFunctions.R'
+    'bivariate_multimodalMC.R'
+    'categoricalMC.R'
+    'conditionalMC.R'
+    'misc_functions.R'
+    'multimodalMC.R'
+    'numericMC.R'

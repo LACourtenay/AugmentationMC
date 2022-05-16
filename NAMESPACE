@@ -1,0 +1,29 @@
+## export(TOST)
+## export(autocorrelation)
+## export(burn_in)
+# #export(effective_sample_size)
+## export(sample_from_trace)
+## export(trace_plot)
+
+## normal functions
+
+export(multimodalMC)
+export(numericMC)
+export(categoricalMC)
+export(conditionalMC)
+export(bivariate_multimodalMC)
+
+## S4 classes and methods
+
+exportClasses(MCMC_Trace)
+exportMethods(TOST, autocorrelation, burn_in, effective_sample_size,
+              sample_from_trace, trace_plot)
+export(MCMC)
+
+# dependencies
+
+import(grDevices)
+import(graphics)
+import(methods)
+import(stats)
+import(utils)

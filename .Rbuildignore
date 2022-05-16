@@ -1,0 +1,11 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^mc_qualitative_quantitative2\.R$
+^circle_dataset\.txt$
+^Example Codes\.R$
+^left_moon\.txt$
+^moons_dataset\.txt$
+^right_moon\.txt$
+^single_moon_dataset\.txt$
+^Trial Code\.R$
+^Misc$
