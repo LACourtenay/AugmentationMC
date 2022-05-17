@@ -11,6 +11,7 @@ NULL
 #' @param data_set An matrix or array of numeric data
 #' @param n_iterations The number of iterations to compute of the Markov Chain
 #' @param step_size The step size of the Markov Chain. 0.5 is the default step size.
+#' A vector of step sizes may also be provided, defining the step size for each dimension separately.
 #' @param num_breaks An optional parameter that can be used to fine-tune the calculation
 #' of the probability distribution from which to sample from.
 #'
@@ -80,8 +81,24 @@ MCMC <- function(
     stop("The number of simulations must be a non-negative integer, e.g. 2")
   }
 
-  if(!is.numeric(step_size) | n_iterations <= 0) {
+  if(!is.numeric(step_size)) {
     stop("Step Size must be a non-negative number.")
+  }
+
+  if(length(step_size) != 1) {
+    if (length(step_size) != dim(data_set)[2]) {
+      stop(paste0(
+        "If a vector of step sizes is provided, then the vector must be the same length",
+        " as the number of dimensions to be sampled from."
+      ))
+    }
+    if (TRUE %in% (step_size <= 0)) {
+      stop("Step sizes must be non-negative numbers")
+    }
+  } else {
+    if (step_size <= 0) {
+      stop("Step size must be a non-negative number")
+    }
   }
 
   if (num_breaks != 0) {
@@ -115,8 +132,14 @@ MCMC <- function(
     dim = c(n_iterations, dim(data_set)[2])
   )
 
-  for (i in 1:dim(delta)[2]) {
-    delta[,i] <- rnorm(dim(delta)[1], mean = 0, sd = step_size)
+  if (length(step_size) == 1) {
+    for (i in 1:dim(delta)[2]) {
+      delta[,i] <- rnorm(dim(delta)[1], mean = 0, sd = step_size)
+    }
+  } else {
+    for (i in 1:dim(delta)[2]) {
+      delta[,i] <- rnorm(dim(delta)[1], mean = 0, sd = step_size[i])
+    }
   }
 
   cat("Begin sampling...", "\n")
