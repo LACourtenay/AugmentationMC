@@ -230,8 +230,8 @@ library(AugmentationMC)
 
 data("moons_qual_quant")
 
-left_moon <- moons_qual_quant[moons_qual_quant$category == "Left",]
-right_moon <- moons_qual_quant[moons_qual_quant$category == "Right",]
+left_moon <- moons[moons$category == "Left",]
+right_moon <- moons[moons$category == "Right",]
 
 # visualise original data
 
@@ -244,10 +244,10 @@ right_moon_sim <- trial[trial$category == "Right",]
 #
 
 plot(left_moon$x, left_moon$y,
-     asp = 1, pch = 1,
-     xlim = c(min(moons_qual_quant$x), max(moons_qual_quant$x)),
-     ylim = c(min(moons_qual_quant$y), max(moons_qual_quant$y)))
-points(right_moon$x, right_moon$y, pch = 1, col = "red")
+     asp = 1, pch = 19,
+     xlim = c(min(moons$x), max(moons$x)),
+     ylim = c(min(moons$y), max(moons$y)))
+points(right_moon$x, right_moon$y, pch = 19, col = "red")
 
 points(left_moon_sim$x, left_moon_sim$y, pch = 19, col = "black")
 points(right_moon_sim$x, right_moon_sim$y, pch = 19, col = "red")
@@ -281,31 +281,64 @@ sample_data_2 <- cbind(sample_data_2, sample_data_2[sample(nrow(sample_data_2),
                                                            size = nrow(sample_data_2),
                                                            replace = FALSE),1])
 
-trial <- multimodalMC(multiclass_dataset, n_simulations = 100)
+trial <- multimodalMC(multiclass_dataset, 100)
 
-plot(multiclass_dataset[multiclass_dataset$Sample_1 == "A1",1],
-     multiclass_dataset[multiclass_dataset$Sample_1 == "A1",2], asp = 1, pch = 1,
-     xlim = c(min(multiclass_dataset$x), max(multiclass_dataset$x)),
-     ylim = c(min(multiclass_dataset$y), max(multiclass_dataset$y)))
-points(multiclass_dataset[multiclass_dataset$Sample_1 == "B1",1],
-       multiclass_dataset[multiclass_dataset$Sample_1 == "B1",2], pch = 1, col = "red")
-points(multiclass_dataset[multiclass_dataset$Sample_1 == "C1",1],
-       multiclass_dataset[multiclass_dataset$Sample_1 == "C1",2], pch = 1, col = "blue")
+par(mfrow = c(1,2))
+
+plot(
+  multiclass_dataset[multiclass_dataset$Sample_1 == "A1",1],
+  multiclass_dataset[multiclass_dataset$Sample_1 == "A1",2],
+  asp = 1, pch = 1,
+  xlim = c(min(multiclass_dataset$x), max(multiclass_dataset$x)),
+  ylim = c(min(multiclass_dataset$y), max(multiclass_dataset$y)),
+  xlab = "x", ylab = "y"
+)
+points(
+  multiclass_dataset[multiclass_dataset$Sample_1 == "B1",1],
+  multiclass_dataset[multiclass_dataset$Sample_1 == "B1",2],
+  pch = 1, col = "red"
+)
+points(
+  multiclass_dataset[multiclass_dataset$Sample_1 == "C1",1],
+  multiclass_dataset[multiclass_dataset$Sample_1 == "C1",2],
+  pch = 1, col = "blue"
+)
+
+plot(
+  multiclass_dataset[multiclass_dataset$Sample_2 == "A2",1],
+  multiclass_dataset[multiclass_dataset$Sample_2 == "A2",2], asp = 1, pch = 19,
+  xlim = c(min(multiclass_dataset$x), max(multiclass_dataset$x)),
+  ylim = c(min(multiclass_dataset$y), max(multiclass_dataset$y)),
+  xlab = "x", ylab = "y"
+)
+points(
+  multiclass_dataset[multiclass_dataset$Sample_2 == "B2",1],
+  multiclass_dataset[multiclass_dataset$Sample_2 == "B2",2], pch = 19, col = "red"
+)
+
+par(mfrow = c(1,1))
 
 points(trial[trial$Sample_1 == "A1", 1],
-       trial[trial$Sample_1 == "A1", 2], pch = 19, col = "black", cex = 2)
+       trial[trial$Sample_1 == "A1", 2],
+       pch = 19, col = "black", cex = 2)
 points(trial[trial$Sample_1 == "B1", 1],
-       trial[trial$Sample_1 == "B1", 2], pch = 19, col = "red", cex = 2)
+       trial[trial$Sample_1 == "B1", 2],
+       pch = 19, col = "red", cex = 2)
 points(trial[trial$Sample_1 == "C1", 1],
-       trial[trial$Sample_1 == "C1", 2], pch = 19, col = "blue", cex = 2)
+       trial[trial$Sample_1 == "C1", 2],
+       pch = 19, col = "blue", cex = 2)
 
 trial <- multimodalMC(multiclass_dataset, n_simulations = 100)
-plot(multiclass_dataset[multiclass_dataset$Sample_2 == "A2",1],
-     multiclass_dataset[multiclass_dataset$Sample_2 == "A2",2], asp = 1, pch = 1,
-     xlim = c(min(multiclass_dataset$x), max(multiclass_dataset$x)),
-     ylim = c(min(multiclass_dataset$y), max(multiclass_dataset$y)))
-points(multiclass_dataset[multiclass_dataset$Sample_2 == "B2",1],
-       multiclass_dataset[multiclass_dataset$Sample_2 == "B2",2], pch = 1, col = "red")
+plot(
+  multiclass_dataset[multiclass_dataset$Sample_2 == "A2",1],
+  multiclass_dataset[multiclass_dataset$Sample_2 == "A2",2], asp = 1, pch = 19,
+  xlim = c(min(multiclass_dataset$x), max(multiclass_dataset$x)),
+  ylim = c(min(multiclass_dataset$y), max(multiclass_dataset$y))
+)
+points(
+  multiclass_dataset[multiclass_dataset$Sample_2 == "B2",1],
+  multiclass_dataset[multiclass_dataset$Sample_2 == "B2",2], pch = 19, col = "red"
+)
 
 points(trial[trial$Sample_2 == "A2", 1],
        trial[trial$Sample_2 == "A2", 2], pch = 19, col = "black", cex = 2)

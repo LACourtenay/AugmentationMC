@@ -468,14 +468,14 @@ setMethod(
       if (dim_2 != 1) {
         stop("For non-vectorial data, the user must specify which variable they wish to compare")
       }
-    }
-
-    if (dimension > dim_2) {
-      stop(paste0(
-        "The user has specified a dimension or variable that does not exist.\n",
-        "The data provided has ", dim_2, " dimensions/variables, but the user has",
-        " specified ", dimension
-      ))
+    } else {
+      if (dimension > dim_2) {
+        stop(paste0(
+          "The user has specified a dimension or variable that does not exist.\n",
+          "The data provided has ", dim_2, " dimensions/variables, but the user has",
+          " specified ", dimension
+        ))
+      }
     }
 
     if (!is.logical(robust)) {
@@ -582,14 +582,14 @@ setMethod(
       if (dim_2 != 1) {
         stop("For non-vectorial data, the user must specify which variable they wish to compare")
       }
-    }
-
-    if (dimension > dim_2) {
-      stop(paste0(
-        "The user has specified a dimension or variable that does not exist.\n",
-        "The data provided has ", dim_2, " dimensions/variables, but the user has",
-        " specified ", dimension
-      ))
+    } else {
+      if (dimension > dim_2) {
+        stop(paste0(
+          "The user has specified a dimension or variable that does not exist.\n",
+          "The data provided has ", dim_2, " dimensions/variables, but the user has",
+          " specified ", dimension
+        ))
+      }
     }
 
     if (!is.logical(robust)) {
