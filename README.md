@@ -26,7 +26,8 @@ Universidad de Salamanca [USAL]
 ---------------------------------------------------------------------------------------------------
 
 This code was designed and prepared for the study by:
-<b> Courtenay, L.A.; Aramendi, J.; González-Aguilera, D. (Submitted) Recruiting a Skeleton Crew – Methods for Simulating and Augmenting Palaeoanthropological Data using Monte Carlo based Algorithms <b>
+<b> Courtenay, L.A.; Aramendi, J.; González-Aguilera, D. (Submitted)
+Recruiting a Skeleton Crew – Methods for Simulating and Augmenting Palaeoanthropological Data using Monte Carlo based Algorithms </b>
 
 TIDOP research group website: http://tidop.usal.es/
 
