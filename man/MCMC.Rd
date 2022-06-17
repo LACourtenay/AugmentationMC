@@ -11,7 +11,8 @@ MCMC(data_set, n_iterations, step_size = 0.5, num_breaks = 0)
 
 \item{n_iterations}{The number of iterations to compute of the Markov Chain}
 
-\item{step_size}{The step size of the Markov Chain. 0.5 is the default step size.}
+\item{step_size}{The step size of the Markov Chain. 0.5 is the default step size.
+A vector of step sizes may also be provided, defining the step size for each dimension separately.}
 
 \item{num_breaks}{An optional parameter that can be used to fine-tune the calculation
 of the probability distribution from which to sample from.}
@@ -68,7 +69,9 @@ points(trace[,1], trace[,2], col = "red", pch  = 19)
 
 }
 \seealso{
-evaluate_single_trace...
+\code{\link{MCMC_Trace}}, \code{\link{burn_in}}, \code{\link{sample_from_trace}},
+\code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+\code{\link{trace_plot}}
 }
 \author{
 Lloyd A. Courtenay

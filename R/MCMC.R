@@ -42,8 +42,9 @@ NULL
 #'
 #' @return Markov Chain Monte Carlo Trace S4 Object
 #'
-#' @seealso
-#' evaluate_single_trace...
+#' @seealso \code{\link{MCMC_Trace}}, \code{\link{burn_in}}, \code{\link{sample_from_trace}},
+#' \code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+#' \code{\link{trace_plot}}
 #'
 #' @author Lloyd A. Courtenay
 #'

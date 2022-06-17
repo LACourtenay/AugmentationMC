@@ -8,6 +8,8 @@
 #' @slot  burn_in A boolean value indicating whether the burn in period of the
 #' trace has been removed
 #'
+#' @seealso \code{\link{MCMC}}
+#'
 #' @export
 
 setClass(
@@ -67,6 +69,11 @@ setMethod(
 #' @return An MCMC_Trace object excluding the burn-in period
 #'
 #' @author Lloyd A. Courtenay
+#'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}},
+#' \code{\link{sample_from_trace}},
+#' \code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+#' \code{\link{trace_plot}}
 #'
 #' @examples
 #'
@@ -134,6 +141,10 @@ setMethod(
 #' @return Matrix of simulated values sampled from the trace
 #'
 #' @author Lloyd A. Courtenay
+#'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+#' \code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+#' \code{\link{trace_plot}}
 #'
 #' @examples
 #'
@@ -277,6 +288,11 @@ setMethod(
 #'
 #' @author Lloyd A. Courtenay
 #'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+#' \code{\link{sample_from_trace}},
+#' \code{\link{TOST}}, \code{\link{autocorrelation}},
+#' \code{\link{trace_plot}}
+#'
 #' @examples
 #'
 #' data("single_moon")
@@ -410,6 +426,11 @@ setMethod(
 #' 10.3390/app10249133
 #'
 #' @author Lloyd A. Courtenay
+#'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+#' \code{\link{sample_from_trace}},
+#' \code{\link{effective_sample_size}}, \code{\link{autocorrelation}},
+#' \code{\link{trace_plot}}
 #'
 #' @examples
 #'
@@ -774,6 +795,11 @@ setMethod(
 #'
 #' @author Lloyd A. Courtenay
 #'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+#' \code{\link{sample_from_trace}},
+#' \code{\link{effective_sample_size}}, \code{\link{TOST}},
+#' \code{\link{trace_plot}}
+#'
 #' @examples
 #'
 #' data("single_moon")
@@ -883,6 +909,10 @@ setMethod(
 #' will fixate on where the original distribution is.
 #'
 #' @author Lloyd A. Courtenay
+#'
+#' @seealso \code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+#' \code{\link{sample_from_trace}},
+#' \code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}}
 #'
 #' @examples
 #'

@@ -72,6 +72,12 @@ effective_sample_size(trial_3)
 #
 
 }
+\seealso{
+\code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+\code{\link{sample_from_trace}},
+\code{\link{TOST}}, \code{\link{autocorrelation}},
+\code{\link{trace_plot}}
+}
 \author{
 Lloyd A. Courtenay
 }

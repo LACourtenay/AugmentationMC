@@ -49,6 +49,12 @@ autocorrelation(trial_3, main = "Step Size = 0.1")
 #
 
 }
+\seealso{
+\code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+\code{\link{sample_from_trace}},
+\code{\link{effective_sample_size}}, \code{\link{TOST}},
+\code{\link{trace_plot}}
+}
 \author{
 Lloyd A. Courtenay
 }

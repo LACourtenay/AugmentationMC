@@ -37,6 +37,11 @@ points(trace[,1], trace[,2], col = "red", pch  = 19)
 #
 
 }
+\seealso{
+\code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+\code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+\code{\link{trace_plot}}
+}
 \author{
 Lloyd A. Courtenay
 }

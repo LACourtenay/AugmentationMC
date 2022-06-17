@@ -29,6 +29,12 @@ augmentation_trial <- burn_in(augmentation_trial, 0.25)
 #
 
 }
+\seealso{
+\code{\link{MCMC}}, \code{\link{MCMC_Trace}},
+\code{\link{sample_from_trace}},
+\code{\link{effective_sample_size}}, \code{\link{TOST}}, \code{\link{autocorrelation}},
+\code{\link{trace_plot}}
+}
 \author{
 Lloyd A. Courtenay
 }

@@ -16,3 +16,6 @@ An S4 Class for Markov Chain Monte Carlo traces
 trace has been removed}
 }}
 
+\seealso{
+\code{\link{MCMC}}
+}

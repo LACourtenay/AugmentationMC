@@ -98,6 +98,12 @@ TOST(trace, single_moon, dimension = 1, robust = TRUE)
 #
 
 }
+\seealso{
+\code{\link{MCMC}}, \code{\link{MCMC_Trace}}, \code{\link{burn_in}},
+\code{\link{sample_from_trace}},
+\code{\link{effective_sample_size}}, \code{\link{autocorrelation}},
+\code{\link{trace_plot}}
+}
 \author{
 Lloyd A. Courtenay
 }
