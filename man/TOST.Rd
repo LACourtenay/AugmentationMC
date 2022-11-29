@@ -7,13 +7,34 @@
 \alias{TOST,numeric-method}
 \title{Two-One Sided Test (TOST) for Equivalence between Trace and Original Data}
 \usage{
-TOST(trace, original_data, dimension = NULL, robust = TRUE, plot = TRUE)
+TOST(
+  trace,
+  original_data,
+  dimension = NULL,
+  robust = TRUE,
+  plot = TRUE,
+  scale = TRUE
+)
 
-\S4method{TOST}{MCMC_Trace}(trace, original_data, dimension = NULL, robust = TRUE, plot = TRUE)
+\S4method{TOST}{MCMC_Trace}(
+  trace,
+  original_data,
+  dimension = NULL,
+  robust = TRUE,
+  plot = TRUE,
+  scale = TRUE
+)
 
-\S4method{TOST}{matrix}(trace, original_data, dimension = NULL, robust = TRUE, plot = TRUE)
+\S4method{TOST}{matrix}(
+  trace,
+  original_data,
+  dimension = NULL,
+  robust = TRUE,
+  plot = TRUE,
+  scale = TRUE
+)
 
-\S4method{TOST}{numeric}(trace, original_data, robust = TRUE, plot = TRUE)
+\S4method{TOST}{numeric}(trace, original_data, robust = TRUE, plot = TRUE, scale = TRUE)
 }
 \arguments{
 \item{trace}{either an MCMC_Trace object, a matrix of numeric values,
@@ -29,6 +50,9 @@ should be performed. Default is set to TRUE.}
 
 \item{plot}{a boolean value defining whether a density plot should be produced
 comparing the original and the augmented data}
+
+\item{scale}{a boolean value defining whether values should be scaled between
+0 and 1 prior to calculating TOST. This step is recomended when comparing traces.}
 }
 \description{
 Calculation of the statistical equivalence between the augmented data

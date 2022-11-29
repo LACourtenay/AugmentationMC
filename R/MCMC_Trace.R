@@ -379,6 +379,8 @@ setMethod(
 #' should be performed. Default is set to TRUE.
 #' @param plot a boolean value defining whether a density plot should be produced
 #' comparing the original and the augmented data
+#' @param scale a boolean value defining whether values should be scaled between
+#' 0 and 1 prior to calculating TOST. This step is recomended when comparing traces.
 #'
 #' @details This function can be used to compare two distributions to check for
 #' their equivalence, and the magnitude of said equivalence. As recommended by Courtenay
@@ -456,7 +458,8 @@ setGeneric(
                  original_data,
                  dimension = NULL,
                  robust = TRUE,
-                 plot = TRUE) standardGeneric("TOST")
+                 plot = TRUE,
+                 scale = TRUE) standardGeneric("TOST")
 )
 
 #' @rdname TOST
@@ -467,7 +470,8 @@ setMethod(
                         original_data,
                         dimension = NULL,
                         robust = TRUE,
-                        plot = TRUE) {
+                        plot = TRUE,
+                        scale = TRUE) {
 
     if (missing(original_data) | missing(trace)) {
       stop("TOST can only be used to evaluate original_data with a simulated trace.")
@@ -507,6 +511,10 @@ setMethod(
       stop("The plot argument only accepts boolean values")
     }
 
+    if (!is.logical(scale)) {
+      stop("The scale argument only accepts boolean values")
+    }
+
     if (dim_2 >= 2) {
       trace <- trace[(dim_1 / 2):dim_1,]
       trace <- trace[!duplicated(trace),]
@@ -517,21 +525,38 @@ setMethod(
       trace <- trace[!duplicated(trace)]
     }
 
-    scaled_values <- scale_values(c(trace, original_data))
-    scaled_trace <- scaled_values[1:length(trace)]
-    scaled_original <- scaled_values[
-      length(trace) + 1:length(scaled_values) - length(trace)
-    ]
+    if (scale == TRUE) {
 
-    if (robust == TRUE) {
+      scaled_values <- scale_values(c(trace, original_data))
+      scaled_trace <- scaled_values[1:length(trace)]
+      scaled_original <- scaled_values[
+        length(trace) + 1:length(scaled_values) - length(trace)
+      ]
 
-      rTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(scaled_trace, scaled_original)
+
+      } else {
+
+        tTOST(scaled_trace, scaled_original)
+
+      }
 
     } else {
 
-      tTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(trace, original_data)
+
+      } else {
+
+        tTOST(trace, original_data)
+
+      }
 
     }
+
 
     if (plot == TRUE) {
 
@@ -581,7 +606,8 @@ setMethod(
                         original_data,
                         dimension = NULL,
                         robust = TRUE,
-                        plot = TRUE) {
+                        plot = TRUE,
+                        scale = TRUE) {
 
     if (missing(original_data) | missing(trace)) {
       stop("TOST can only be used to evaluate original_data with a simulated trace.")
@@ -630,19 +656,35 @@ setMethod(
       trace <- trace[!duplicated(trace)]
     }
 
-    scaled_values <- scale_values(c(trace, original_data))
-    scaled_trace <- scaled_values[1:length(trace)]
-    scaled_original <- scaled_values[
-      length(trace) + 1:length(scaled_values) - length(trace)
-    ]
+    if (scale == TRUE) {
 
-    if (robust == TRUE) {
+      scaled_values <- scale_values(c(trace, original_data))
+      scaled_trace <- scaled_values[1:length(trace)]
+      scaled_original <- scaled_values[
+        length(trace) + 1:length(scaled_values) - length(trace)
+      ]
 
-      rTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(scaled_trace, scaled_original)
+
+      } else {
+
+        tTOST(scaled_trace, scaled_original)
+
+      }
 
     } else {
 
-      tTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(trace, original_data)
+
+      } else {
+
+        tTOST(trace, original_data)
+
+      }
 
     }
 
@@ -693,7 +735,8 @@ setMethod(
   definition = function(trace,
                         original_data,
                         robust = TRUE,
-                        plot = TRUE) {
+                        plot = TRUE,
+                        scale = TRUE) {
 
     if (missing(original_data) | missing(trace)) {
       stop("TOST can only be used to evaluate original_data with a simulated trace.")
@@ -716,19 +759,35 @@ setMethod(
       stop("Both the original data and the trace must have the same size")
     }
 
-    scaled_values <- scale_values(c(trace, original_data))
-    scaled_trace <- scaled_values[1:length(trace)]
-    scaled_original <- scaled_values[
-      length(trace) + 1:length(scaled_values) - length(trace)
-    ]
+    if (scale == TRUE) {
 
-    if (robust == TRUE) {
+      scaled_values <- scale_values(c(trace, original_data))
+      scaled_trace <- scaled_values[1:length(trace)]
+      scaled_original <- scaled_values[
+        length(trace) + 1:length(scaled_values) - length(trace)
+      ]
 
-      rTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(scaled_trace, scaled_original)
+
+      } else {
+
+        tTOST(scaled_trace, scaled_original)
+
+      }
 
     } else {
 
-      tTOST(scaled_trace, scaled_original)
+      if (robust == TRUE) {
+
+        rTOST(trace, original_data)
+
+      } else {
+
+        tTOST(trace, original_data)
+
+      }
 
     }
 
