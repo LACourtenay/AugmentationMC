@@ -26,7 +26,7 @@ Universidad de Salamanca [USAL]
 ---------------------------------------------------------------------------------------------------
 
 This code was designed and prepared for the study by:
-<b> Courtenay, L.A.; Aramendi, J.; González-Aguilera, D. (Submitted)
+<b> Courtenay, L.A.; Aramendi, J.; González-Aguilera, D. (2023)
 Recruiting a Skeleton Crew – Methods for Simulating and Augmenting Palaeoanthropological Data using Monte Carlo based Algorithms </b>
 
 TIDOP research group website: http://tidop.usal.es/
@@ -40,3 +40,18 @@ TIDOP research group website: http://tidop.usal.es/
 ---------------------------------------------------------------------------------------------------
 
 Comments, questions, doubts, suggestions and corrections can all be directed to L. A. Courtenay at the email provided above.
+
+
+---------------------------------------------------------------------------------------------------
+
+## License
+
+This project is licensed under the GNU Affero General Public License v3.0.
+See the LICENSE file for details.
+
+<b> Copyright (C) 2023 Lloyd Courtenay </b>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published
+by the Free Software Foundation, version 3.
+
